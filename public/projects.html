@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Projects</title>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/projects.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+   <section class="flex">
+
+      <h1 class="name">Seth Dinslage</h1>
+
+      <nav class="navbar">
+         <a href="index.html">Home</a>
+         <a href="resume.html">Resume</a>
+         <a href="projects.html">Projects</a>
+         <a href="education.html">Education</a>
+         <a href="contact.html">Contact</a>
+         <a href="https://www.youtube.com/watch?v=q6ZinjQ6tEk">CSS Source</a>
+      </nav>
+
+   </section>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<div class="home-container">
+
+   <section class="home">
+      <div class="projects-content">
+         <h1 class="projects-header">Projects</h1>
+         <p class="projects-desc">This is a list of projects that I have worked on over the years. Some are larger than others, 
+            and some I am still working on. I plan on updating this page as I work on and create more things in the future.
+         </p>
+         <h2 class="projects-name">Unity VR Baseball Game</h2>
+         <div class="video-wrapper">
+            <iframe class="video" src="https://www.youtube.com/embed/FZD9W8QaFi0" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+         </div>
+         <p class="project-details">This project was one I was very passionate about. I've always been big into 
+            video games and this was my first real experience working with Unity and creating a game of my own. It is a 
+            basic baseball game similar to that of Wii Sports baseball, but played in VR. This so far has been my favorite
+            project to work on and I have plans in the future to attempt to create bigger and better games.
+         </p>
+         <h3 class="projects-name">DecentraZoo</h3>
+         <div class="video-wrapper">
+            <iframe class="video" src="https://www.youtube.com/embed/cqHvFaxbHTY" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+         </div>
+         <p class="project-details">This was another smaller project I made with the help of a couple classmates as a 
+            class project for our CS 476 Blockchain class. The idea for this game was to create a blockchain based strategy
+             game that has similar gameplay to that of Planet Zoo and DecentraLand. We created both a website showcasing our visison 
+             for the game as well as a small Unity project that portrayed some of how the game would play. We were given a very tight 
+             timeframe for this, only 3 weeks for both the website and the Unity Project, but I am pretty happy with how both applicatoins
+             ended up.
+         </p>
+         <div class="colorblind">
+            <h3 class="projects-name">Colorblind Site</h3>
+            <div class="video-wrapper">
+               <iframe class="video" src="https://www.youtube.com/embed/L95ixuUMWZU" 
+               frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+               allowfullscreen></iframe>
+            </div>
+            <p class="project-details">This is another project that I worked on in a group. For this project, I was responsible
+               for creating a colorblind test that users could take to see if they had any type of color blindness. I created the entirety of the 
+               test itself, with the homepage being created by my two groupmates. I created the images for the test via 
+               <a href="https://imagetocircle.pythonanywhere.com/" class="inline-link">this website</a>.
+               I wrote scripts for the test that as well. The main script counts the amount of errors the user 
+               makes. If the user gets 3 questions wrong that are labeled as red-green, the results page will say they might have red-green 
+               color blindness, and vice versa with yellow-blue. If there are a total of 6 or more errors, the test results will say the user 
+               may have monochromia, or can only see black and white. There are also 2 control questions that are in black and white. 
+               If the user gets either one of those wrong, the test will declare the user may have been randomly guessing as black and white 
+               should be visible to all. This was a fun project to work on, I myself am not color blind but I know people who are and it was fun 
+               creating a test and having them try it to see if my test was accurate.
+            </p>
+         </div>
+         
+     </div>
+   </section>
+
+</div>
+
+<!-- footer section starts  -->
+
+<footer class="footer">
+
+   <div class="visits">Visitors: <span id="visitorCount">0</span></div>
+   <div class="version">Portfolio Version 0.001</div>
+
+</footer>
+
+<!-- footer section ends -->
+   
+</body>
+</html>
+
+<script>
+   window.onload = function() {
+       let visitCount = localStorage.getItem('visitCount');
+       const isNewVisitor = localStorage.getItem('isNewVisitor');
+
+       if (isNewVisitor === null) {
+           // This is a new visitor
+           visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
+           localStorage.setItem('visitCount', visitCount);
+           localStorage.setItem('isNewVisitor', 'false');
+       }
+
+       document.getElementById('visitorCount').textContent = visitCount;
+   };
+</script>

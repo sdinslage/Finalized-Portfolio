@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact</title>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/contact.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+   <section class="flex">
+
+      <h1 class="name">Seth Dinslage</h1>
+
+      <nav class="navbar">
+         <a href="index.html">Home</a>
+         <a href="resume.html">Resume</a>
+         <a href="projects.html">Projects</a>
+         <a href="education.html">Education</a>
+         <a href="contact.html">Contact</a>
+         <a href="https://www.youtube.com/watch?v=q6ZinjQ6tEk">CSS Source</a>
+      </nav>
+
+   </section>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<div class="home-container">
+    <section class="home">
+      <div class="contact-content">
+         <h2 class="contact-header">Contact Info</h2>
+         <div class="contact-row">
+             <p class="contact-label">Email Address:</p>
+             <a href="mailto:seth.dinslage@gmail.com" class="contact-email">seth.dinslage@gmail.com</a>
+         </div>
+         <p class="contact-number">Phone Number: (816)591-2322</p>
+         <a href="https://www.linkedin.com/in/seth-dinslage/" class="linkedin-link">Linkedin</a>
+     </div>
+    </section>
+</div>
+
+<!-- home section ends -->
+
+<!-- footer section starts  -->
+
+<footer class="footer">
+
+   <div class="visits">Visitors: <span id="visitorCount">0</span></div>
+   <div class="version">Portfolio Version 0.001</div>
+
+</footer>
+
+<!-- footer section ends -->
+   
+</body>
+</html>
+
+<script>
+   window.onload = function() {
+       let visitCount = localStorage.getItem('visitCount');
+       const isNewVisitor = localStorage.getItem('isNewVisitor');
+
+       if (isNewVisitor === null) {
+           // This is a new visitor
+           visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
+           localStorage.setItem('visitCount', visitCount);
+           localStorage.setItem('isNewVisitor', 'false');
+       }
+
+       document.getElementById('visitorCount').textContent = visitCount;
+   };
+</script>
